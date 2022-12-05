@@ -9,36 +9,22 @@ import {
   Card,
 } from "bootstrap-4-react";
 import Lottie from "react-lottie";
-import students from "./lottie/students";
 import rundog1 from "./lottie/rundog1";
 import rundog2 from "./lottie/rundog2";
 import rundog3 from "./lottie/rundog3";
-import donald_trump from "./img/people/donald_trump.jpg";
-import marilyn_monroe from "./img/people/marilyn_monroe.jpg";
-import jim_carrey from "./img/people/jim_carrey.jpg";
-import barack_obama from "./img/people/barack_obama.jpg";
-import bruce_willis from "./img/people/bruce_willis.jpg";
-import tom_cruise from "./img/people/tom_cruise.jpg";
-import andrzej_duda from "./img/people/andrzej_duda.jpg";
-import eddie_murphy from "./img/people/eddie_murphy.jpg";
-import robert_lewandowski from "./img/people/robert_lewandowski.jpg";
-import agnieszka_radwanska from "./img/people/agnieszka_radwanska.jpg";
-import doda from "./img/people/doda.jpg";
-import dawid_podsiadlo from "./img/people/dawid_podsiadlo.jpg";
-import jrr_tolkien from "./img/people/jrr_tolkien.jpg";
-import lech_kaczynski from "./img/people/lech_kaczynski.jpg";
-import wislawa_szymborska from "./img/people/wislawa_szymborska.jpg";
-import julia_roberts from "./img/people/julia_roberts.jpg";
-import freddie_mercury from "./img/people/freddie_mercury.jpg";
-import christiano_ronaldo from "./img/people/christiano_ronaldo.jpg";
-import jan_pawel_2 from "./img/people/jan_pawel_2.jpg";
-import mikolaj_kopernik from "./img/people/mikolaj_kopernik.jpg";
-import albert_einsten from "./img/people/albert_einsten.jpg";
-import boguslaw_linda from "./img/people/boguslaw_linda.jpg";
-import morgan_freeman from "./img/people/morgan_freeman.jpg";
-import usain_bolt from "./img/people/usain_bolt.jpg";
-import jk_rowling from "./img/people/jk_rowling.jpg";
-import maria_sklodowska_curie from "./img/people/maria_sklodowska_curie.jpg";
+import arquitectura from "./img/carreras/arquitectura.png";
+import administracion from "./img/carreras/administracion.png";
+import ambiental from "./img/carreras/ambiental.png";
+import biomedica from "./img/carreras/biomedica.png";
+import civil from "./img/carreras/civil.png";
+import contador from "./img/carreras/contador.png";
+import diseño from "./img/carreras/diseño.png";
+import electronica from "./img/carreras/electronica.png";
+import gestion from "./img/carreras/gestion.png";
+import logistica from "./img/carreras/logistica.png";
+import mecanica from "./img/carreras/mecanica.png";
+import nanotecnologia from "./img/carreras/nanotecnologia.png";
+import quimica from "./img/carreras/quimica.png";
 
 class App extends React.Component {
   constructor(props) {
@@ -48,32 +34,19 @@ class App extends React.Component {
       currentPage: "main",
       question: null,
       photos: [
-        jim_carrey,
-        donald_trump,
-        barack_obama,
-        marilyn_monroe,
-        bruce_willis,
-        tom_cruise,
-        andrzej_duda,
-        eddie_murphy,
-        robert_lewandowski,
-        agnieszka_radwanska,
-        doda,
-        dawid_podsiadlo,
-        jrr_tolkien,
-        lech_kaczynski,
-        wislawa_szymborska,
-        julia_roberts,
-        freddie_mercury,
-        christiano_ronaldo,
-        jan_pawel_2,
-        mikolaj_kopernik,
-        albert_einsten,
-        boguslaw_linda,
-        morgan_freeman,
-        usain_bolt,
-        jk_rowling,
-        maria_sklodowska_curie,
+        administracion,
+        ambiental,
+        arquitectura,
+        biomedica,
+        civil,
+        contador,
+        diseño,
+        electronica,
+        gestion,
+        logistica,
+        mecanica,
+        nanotecnologia,
+        quimica,
       ],
     };
 
@@ -88,115 +61,39 @@ class App extends React.Component {
     let program =
       ":- use_module(library(lists))." +
       "get_questions(Q) :-" +
-      "Q = ['Is it a man?', 'Is your person dead?', 'Has children?', 'Comedian actor?', 'Older than 50', 'Bald?', 'Was/Is a president?', 'Black?']." +
+      "Q = ['¿aplica calculo integral o diferencial?','¿usa bata de laboratorio?', '¿aplican conocimientos de electronica?', '¿se basa en realizar productos muy pequeños?', '¿esta enfocado en el desarrollo de maquinaria pesada?', '¿su estudio esta enfocado al medio ambiente?','¿trabajan en medicinas?', '¿trabajan con organismos vivos?', '¿esta enfocado al conocimiento del area empresarial?' ,'¿estudia los procesos de distribucion, almacenamiento o rutas?', '¿realizan supervisión de construcciones?', '¿estudia la estructura de la empresa?', '¿utiliza una regla t?'    ]." +
       "get_facts(F) :-" +
-      "F = [man, dead, has_children, actor_comedian, older_than_50, bald, was_is_president, black]." +
-      "man(jim_carrey)." +
-      "has_children(jim_carrey)." +
-      "comedian(jim_carrey)." +
-      "actor(jim_carrey)." +
-      "older_than_50(jim_carrey)." +
-      "man(donald_trump)." +
-      "has_children(donald_trump)." +
-      "older_than_50(donald_trump)." +
-      "was_is_president(donald_trump)." +
-      "man(barack_obama)." +
-      "has_children(barack_obama)." +
-      "older_than_50(barack_obama)." +
-      "was_is_president(barack_obama)." +
-      "black(barack_obama)." +
-      "dead(marilyn_monroe)." +
-      "man(bruce_willis)." +
-      "has_children(bruce_willis)." +
-      "actor(bruce_willis)." +
-      "bald(bruce_willis)." +
-      "man(tom_cruise)." +
-      "has_children(tom_cruise)." +
-      "actor(tom_cruise)." +
-      "older_than_50(tom_cruise)." +
-      "man(andrzej_duda)." +
-      "has_children(andrzej_duda)." +
-      "was_is_president(andrzej_duda)." +
-      "polish(andrzej_duda)." +
-      "man(eddie_murphy)." +
-      "has_children(eddie_murphy)." +
-      "comedian(eddie_murphy)." +
-      "actor(eddie_murphy)." +
-      "older_than_50(eddie_murphy)." +
-      "bald(eddie_murphy)." +
-      "black(eddie_murphy)." +
-      "man(robert_lewandowski)." +
-      "has_children(robert_lewandowski)." +
-      "polish(robert_lewandowski)." +
-      "athlete(robert_lewandowski)." +
-      "polish(agnieszka_radwanska)." +
-      "athlete(agnieszka_radwanska)." +
-      "polish(doda)." +
-      "singer(doda)." +
-      "man(dawid_podsiadlo)." +
-      "polish(dawid_podsiadlo)." +
-      "singer(dawid_podsiadlo)." +
-      "man(jrr_tolkien)." +
-      "dead(jrr_tolkien)." +
-      "has_children(jrr_tolkien)." +
-      "older_than_50(jrr_tolkien)." +
-      "writer(jrr_tolkien)." +
-      "man(lech_kaczynski)." +
-      "dead(lech_kaczynski)." +
-      "has_children(lech_kaczynski)." +
-      "actor(lech_kaczynski)." +
-      "older_than_50(lech_kaczynski)." +
-      "was_is_president(lech_kaczynski)." +
-      "polish(lech_kaczynski)." +
-      "dead(wislawa_szymborska)." +
-      "older_than_50(wislawa_szymborska)." +
-      "polish(wislawa_szymborska)." +
-      "writer(wislawa_szymborska)." +
-      "has_children(julia_roberts)." +
-      "actor(julia_roberts)." +
-      "older_than_50(julia_roberts)." +
-      "man(freddie_mercury)." +
-      "dead(freddie_mercury)." +
-      "singer(freddie_mercury)." +
-      "man(christiano_ronaldo)." +
-      "has_children(christiano_ronaldo)." +
-      "athlete(christiano_ronaldo)." +
-      "man(jan_pawel_2)." +
-      "older_than_50(jan_pawel_2)." +
-      "polish(jan_pawel_2)." +
-      "man(mikolaj_kopernik)." +
-      "dead(mikolaj_kopernik)." +
-      "older_than_50(mikolaj_kopernik)." +
-      "polish(mikolaj_kopernik)." +
-      "scientist(mikolaj_kopernik)." +
-      "man(albert_einsten)." +
-      "dead(albert_einsten)." +
-      "has_children(albert_einsten)." +
-      "older_than_50(albert_einsten)." +
-      "scientist(albert_einsten)." +
-      "man(boguslaw_linda)." +
-      "has_children(boguslaw_linda)." +
-      "actor(boguslaw_linda)." +
-      "older_than_50(boguslaw_linda)." +
-      "polish(boguslaw_linda)." +
-      "man(morgan_freeman)." +
-      "has_children(morgan_freeman)." +
-      "actor(morgan_freeman)." +
-      "older_than_50(morgan_freeman)." +
-      "black(morgan_freeman)." +
-      "man(usain_bolt)." +
-      "black(usain_bolt)." +
-      "athlete(usain_bolt)." +
-      "has_children(jk_rowling)." +
-      "older_than_50(jk_rowling)." +
-      "writer(jk_rowling)." +
-      "dead(maria_sklodowska_curie)." +
-      "has_children(maria_sklodowska_curie)." +
-      "older_than_50(maria_sklodowska_curie)." +
-      "polish(maria_sklodowska_curie)." +
-      "scientist(maria_sklodowska_curie)." +
+      "F = [ calculo, bata, electronica, pequeños, maquinaria, ambiente, medicina, organismos, empresarial, procesos, construcciones, estructura, regla]." +
+      "estructura(administracion)." +
+      "calculo(ambiental)." +
+      "bata(ambiental)." +
+      "ambiente(ambiental)." +
+      "regla(arquitectura)." +
+      "calculo(biomedica)." +
+      "bata(biomedica)." +
+      "medicina(biomedica)." +
+      "calculo(civil)." +
+      "construcciones(civil)." +
+      "calculo(diseño)." +
+      "calculo(electronica)." +
+      "bata(electronica)." +
+      "electronica(electronica)." +
+      "calculo(gestion)." +
+      "empresarial(gestion)." +
+      "calculo(logistica)." +
+      "procesos(logistica)." +
+      "calculo(mecanica)." +
+      "bata(mecanica)." +
+      "electronica(mecanica)." +
+      "maquinaria(mecanica)." +
+      "calculo(nanotecnologia)." +
+      "bata(nanotecnologia)." +
+      "electronica(nanotecnologia)." +
+      "pequeños(nanotecnologia)." +
+      "calculo(quimica)." +
+      "bata(quimica)." +
       "get_people(P) :-" +
-      "P = [jim_carrey, donald_trump, barack_obama, marilyn_monroe, bruce_willis]." +
+      "P = [administracion, ambiental, arquitectura, biomedica, civil, contador, diseño,  electronica, gestion, industrial,  logistica, mecanica, nanotecnologia, quimica]." +
       "q(F) :-" +
       "get_facts(F)." +
       " filter(Answer, F, People, Result) :-" +
@@ -269,92 +166,65 @@ class App extends React.Component {
   reset() {
     this.setState({
       q: [
-        "Is it a man?",
-        "Dead?",
-        "Has children?",
-        "Comedian?",
-        "Actor?",
-        "Older than 50",
-        "Bald?",
-        "Was/Is a president?",
-        "Black?",
-        "Polish?",
-        "Singer?",
-        "Athlete?",
-        "Writer?",
-        "Scientist?",
+        "¿aplica calculo integral o diferencial?",
+        "¿usa bata de laboratorio?",
+        "¿aplican conocimientos de electronica?",
+        "¿se basa en realizar productos muy pequeños?",
+        "¿esta enfocado en el desarrollo de maquinaria pesada?",
+        "¿su estudio esta enfocado al medio ambiente?",
+        "¿trabajan en medicinas?",
+        "¿trabajan con organismos vivos?",
+        "¿esta enfocado al conocimiento del area empresarial?",
+        "¿estudia los procesos de distribucion, almacenamiento o rutas?",
+        "¿realizan supervisión de construcciones?",
+        "¿estudia la estructura de la empresa?",
+        "¿utiliza una regla t?",
       ],
       f: [
-        "man",
-        "dead",
-        "has_children",
-        "comedian",
-        "actor",
-        "older_than_50",
-        "bald",
-        "was_is_president",
-        "black",
-        "polish",
-        "singer",
-        "athlete",
-        "writer",
-        "scientist",
+        "calculo",
+        "bata",
+        "electronica",
+        "pequeños",
+        "maquinaria",
+        "ambiente",
+        "medicina",
+        "organismos",
+        "empresarial",
+        "procesos",
+        "construcciones",
+        "estructura",
+        "regla",
       ],
       p: [
-        "jim_carrey",
-        "donald_trump",
-        "barack_obama",
-        "marilyn_monroe",
-        "bruce_willis",
-        "tom_cruise",
-        "andrzej_duda",
-        "eddie_murphy",
-        "robert_lewandowski",
-        "agnieszka_radwanska",
-        "doda",
-        "dawid_podsiadlo",
-        "jrr_tolkien",
-        "lech_kaczynski",
-        "wislawa_szymborska",
-        "julia_roberts",
-        "freddie_mercury",
-        "christiano_ronaldo",
-        "jan_pawel_2",
-        "mikolaj_kopernik",
-        "albert_einsten",
-        "boguslaw_linda",
-        "morgan_freeman",
-        "usain_bolt",
-        "jk_rowling",
-        "maria_sklodowska_curie",
+        "administracion",
+        "ambiental",
+        "arquitectura",
+        "biomedica",
+        "civil",
+        "contador",
+        "diseño",
+        "electronica",
+        "gestion",
+        "logistica",
+        "mecanica",
+        "nanotecnologia",
+        "quimica",
       ],
       indexesForPhotos: [
-        "jim_carrey",
-        "donald_trump",
-        "barack_obama",
-        "marilyn_monroe",
-        "bruce_willis",
-        "tom_cruise",
-        "andrzej_duda",
-        "eddie_murphy",
-        "robert_lewandowski",
-        "agnieszka_radwanska",
-        "doda",
-        "dawid_podsiadlo",
-        "jrr_tolkien",
-        "lech_kaczynski",
-        "wislawa_szymborska",
-        "julia_roberts",
-        "freddie_mercury",
-        "christiano_ronaldo",
-        "jan_pawel_2",
-        "mikolaj_kopernik",
-        "albert_einsten",
-        "boguslaw_linda",
-        "morgan_freeman",
-        "usain_bolt",
-        "jk_rowling",
-        "maria_sklodowska_curie",
+        "administracion",
+        "aeronautica",
+        "ambiental",
+        "arquitectura",
+        "biomedica",
+        "civil",
+        "contador",
+        "diseño",
+        "electronica",
+        "gestion",
+        "logistica",
+        "mecanica",
+        "nanotecnologia",
+        "quimica",
       ],
       i: 0,
     });
@@ -435,10 +305,10 @@ class App extends React.Component {
                       No
                     </Button>
                     <Button warning as="label" onClick={() => this.doAnswer(2)}>
-                      Don't Know
+                      Talvez
                     </Button>
                     <Button success as="label" onClick={() => this.doAnswer(1)}>
-                      Yes
+                      Sí
                     </Button>
                   </ButtonGroup>
                 </div>
