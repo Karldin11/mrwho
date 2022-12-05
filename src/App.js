@@ -9,22 +9,15 @@ import {
   Card,
 } from "bootstrap-4-react";
 import Lottie from "react-lottie";
+import students from "./lottie/students";
 import rundog1 from "./lottie/rundog1";
 import rundog2 from "./lottie/rundog2";
 import rundog3 from "./lottie/rundog3";
-import arquitectura from "./img/carreras/arquitectura.png";
-import administracion from "./img/carreras/administracion.png";
 import ambiental from "./img/carreras/ambiental.png";
-import biomedica from "./img/carreras/biomedica.png";
-import civil from "./img/carreras/civil.png";
-import contador from "./img/carreras/contador.png";
-import diseño from "./img/carreras/diseño.png";
-import electronica from "./img/carreras/electronica.png";
-import gestion from "./img/carreras/gestion.png";
-import logistica from "./img/carreras/logistica.png";
-import mecanica from "./img/carreras/mecanica.png";
+import administracion from "./img/carreras/administracion.png";
 import nanotecnologia from "./img/carreras/nanotecnologia.png";
-import quimica from "./img/carreras/quimica.png";
+import biomedica from "./img/carreras/biomedica.png";
+import industrial from "./img/carreras/industrial.png";
 
 class App extends React.Component {
   constructor(props) {
@@ -34,19 +27,11 @@ class App extends React.Component {
       currentPage: "main",
       question: null,
       photos: [
-        administracion,
-        ambiental,
-        arquitectura,
-        biomedica,
-        civil,
-        contador,
-        diseño,
-        electronica,
-        gestion,
-        logistica,
-        mecanica,
         nanotecnologia,
-        quimica,
+        ambiental,
+        biomedica,
+        administracion,
+        industrial,
       ],
     };
 
@@ -61,39 +46,30 @@ class App extends React.Component {
     let program =
       ":- use_module(library(lists))." +
       "get_questions(Q) :-" +
-      "Q = ['¿aplica calculo integral o diferencial?','¿usa bata de laboratorio?', '¿aplican conocimientos de electronica?', '¿se basa en realizar productos muy pequeños?', '¿esta enfocado en el desarrollo de maquinaria pesada?', '¿su estudio esta enfocado al medio ambiente?','¿trabajan en medicinas?', '¿trabajan con organismos vivos?', '¿esta enfocado al conocimiento del area empresarial?' ,'¿estudia los procesos de distribucion, almacenamiento o rutas?', '¿realizan supervisión de construcciones?', '¿estudia la estructura de la empresa?', '¿utiliza una regla t?'    ]." +
+      "Q = ['¿aplica calculo integral o diferencial?', '¿estudia la estructura de una empresa?', '¿usa bata de laboratorio?', '¿aplican conocimientos de electronica o productos  pequeños?', '¿puede  desarrollar productos enfocados a salud?', '¿se encuentra en tomas aquino?', '¿ayuda al medio ambiente?', '¿trabajan en medicinas?']." +
       "get_facts(F) :-" +
-      "F = [ calculo, bata, electronica, pequeños, maquinaria, ambiente, medicina, organismos, empresarial, procesos, construcciones, estructura, regla]." +
-      "estructura(administracion)." +
-      "calculo(ambiental)." +
-      "bata(ambiental)." +
-      "ambiente(ambiental)." +
-      "regla(arquitectura)." +
-      "calculo(biomedica)." +
-      "bata(biomedica)." +
-      "medicina(biomedica)." +
-      "calculo(civil)." +
-      "construcciones(civil)." +
-      "calculo(diseño)." +
-      "calculo(electronica)." +
-      "bata(electronica)." +
-      "electronica(electronica)." +
-      "calculo(gestion)." +
-      "empresarial(gestion)." +
-      "calculo(logistica)." +
-      "procesos(logistica)." +
-      "calculo(mecanica)." +
-      "bata(mecanica)." +
-      "electronica(mecanica)." +
-      "maquinaria(mecanica)." +
+      "F = [calculo, estructura, bata, electronica_peque, salud, aquino, ambiente, medicina]." +
       "calculo(nanotecnologia)." +
       "bata(nanotecnologia)." +
+      "peque(nanotecnologia)." +
       "electronica(nanotecnologia)." +
-      "pequeños(nanotecnologia)." +
-      "calculo(quimica)." +
-      "bata(quimica)." +
+      "salud(nanotecnologia)." +
+      "calculo(ambiental)." +
+      "bata(ambiental)." +
+      "salud(ambiental)." +
+      "ambiente(ambiental)." +
+      "calculo(biomedica)." +
+      "bata(biomedica)." +
+      "salud(biomedica)." +
+      "ambiente(biomedica)." +
+      "medicina(biomedica)." +
+      "estructura(administracion)." +
+      "calculo(industrial)." +
+      "bata(industrial)." +
+      "electronica(industrial)." +
+      "aquino(industrial)." +
       "get_people(P) :-" +
-      "P = [administracion, ambiental, arquitectura, biomedica, civil, contador, diseño,  electronica, gestion, industrial,  logistica, mecanica, nanotecnologia, quimica]." +
+      "P = [nanotecnologia, ambiental, biomedica, administracion, industrial]." +
       "q(F) :-" +
       "get_facts(F)." +
       " filter(Answer, F, People, Result) :-" +
@@ -167,64 +143,39 @@ class App extends React.Component {
     this.setState({
       q: [
         "¿aplica calculo integral o diferencial?",
+        "¿estudia la estructura de una empresa?",
         "¿usa bata de laboratorio?",
-        "¿aplican conocimientos de electronica?",
-        "¿se basa en realizar productos muy pequeños?",
-        "¿esta enfocado en el desarrollo de maquinaria pesada?",
-        "¿su estudio esta enfocado al medio ambiente?",
+        "¿aplican conocimientos de electronica o productos  pequeños?",
+        "¿realiza productos pequeños?",
+        "¿puede  desarrollar productos enfocados a salud?",
+        "¿se encuentra en tomas aquino?",
+        "¿se preocupa por el medio ambiente?",
         "¿trabajan en medicinas?",
-        "¿trabajan con organismos vivos?",
-        "¿esta enfocado al conocimiento del area empresarial?",
-        "¿estudia los procesos de distribucion, almacenamiento o rutas?",
-        "¿realizan supervisión de construcciones?",
-        "¿estudia la estructura de la empresa?",
-        "¿utiliza una regla t?",
       ],
       f: [
         "calculo",
+        "estructura",
         "bata",
+        "peque",
         "electronica",
-        "pequeños",
-        "maquinaria",
+        "salud",
+        "aquino",
         "ambiente",
         "medicina",
-        "organismos",
-        "empresarial",
-        "procesos",
-        "construcciones",
-        "estructura",
-        "regla",
       ],
       p: [
-        "administracion",
-        "ambiental",
-        "arquitectura",
-        "biomedica",
-        "civil",
-        "contador",
-        "diseño",
-        "electronica",
-        "gestion",
-        "logistica",
-        "mecanica",
         "nanotecnologia",
-        "quimica",
+        "ambiental",
+        "biomedica",
+        "administracion",
+        "industrial",
       ],
       indexesForPhotos: [
-        "administracion",
-        "aeronautica",
-        "ambiental",
-        "arquitectura",
-        "biomedica",
-        "civil",
-        "contador",
-        "diseño",
-        "electronica",
-        "gestion",
-        "logistica",
-        "mecanica",
         "nanotecnologia",
-        "quimica",
+        "ambiental",
+        "biomedica",
+        "administracion",
+        "industrial",
       ],
       i: 0,
     });
@@ -305,10 +256,10 @@ class App extends React.Component {
                       No
                     </Button>
                     <Button warning as="label" onClick={() => this.doAnswer(2)}>
-                      Talvez
+                      Don't Know
                     </Button>
                     <Button success as="label" onClick={() => this.doAnswer(1)}>
-                      Sí
+                      Yes
                     </Button>
                   </ButtonGroup>
                 </div>
