@@ -9,7 +9,6 @@ import {
   Card,
 } from "bootstrap-4-react";
 import Lottie from "react-lottie";
-import students from "./lottie/students";
 import rundog1 from "./lottie/rundog1";
 import rundog2 from "./lottie/rundog2";
 import rundog3 from "./lottie/rundog3";
@@ -256,10 +255,10 @@ class App extends React.Component {
                       No
                     </Button>
                     <Button warning as="label" onClick={() => this.doAnswer(2)}>
-                      Don't Know
+                      No se
                     </Button>
                     <Button success as="label" onClick={() => this.doAnswer(1)}>
-                      Yes
+                      Si
                     </Button>
                   </ButtonGroup>
                 </div>
